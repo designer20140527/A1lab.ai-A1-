@@ -1,0 +1,1222 @@
+@font-face {
+    font-family: 'Alliance No.2';
+    src: url('assets/fonts/Alliance-No.2-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Geist';
+    src: url('assets/fonts/Geist-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Geist-Light';
+    src: url('assets/fonts/Geist-Light.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    margin: 0;
+    font-family: 'Geist', sans-serif;
+}
+
+/* 添加一个容器来控制所有内容的宽度 */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    height: 100%;
+}
+
+.hero {
+    height: 75vh;
+    background-color: #0a0a0a;
+    position: relative;
+    color: white;
+    overflow: hidden;
+}
+
+nav {
+    padding: 2rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.logo-box {
+    width: 550px;
+    height: 100px;
+    background-color: #556bf8;
+    clip-path: polygon(64% 0, 67% 10%, 100% 10%, 100% 70%, 94% 100%, 0 100%, 0 30%, 6% 0);
+    display: flex;
+    align-items: center;
+    padding-left: 3rem;
+    gap: 1.5rem;
+}
+
+.logo-box img {
+    height: 65px;
+    width: auto;
+}
+
+.brand-name {
+    font-family: 'Alliance No.2', sans-serif;
+    font-size: 1.3rem;
+    color: #0a0a0a;
+}
+
+.hero-content {
+    position: relative;
+    padding-top: 10vh;
+    transform: none;
+}
+
+.hero-content h1 {
+    font-family: 'Alliance No.2', sans-serif;
+    font-size: 7rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    max-width: 1200px;
+    line-height: 1.1;
+    position: relative;
+    animation: fadeInUp 1s ease-out;
+}
+
+/* 修改线条装饰 */
+.hero-content h1::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 88%;
+    width: 100vw;
+    height: 100%;
+    background-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        white 0%,
+        white 5px,      /* 第1条线 - 5px */
+        transparent 5px,
+        transparent 10%,
+        white 10%,
+        white calc(10% + 4.5px),  /* 第2条线 - 4.5px */
+        transparent calc(10% + 4.5px),
+        transparent 20%,
+        white 20%,
+        white calc(20% + 4px),    /* 第3条线 - 4px */
+        transparent calc(20% + 4px),
+        transparent 30%,
+        white 30%,
+        white calc(30% + 3.5px),  /* 第4条线 - 3.5px */
+        transparent calc(30% + 3.5px),
+        transparent 40%,
+        white 40%,
+        white calc(40% + 3px),    /* 第5条线 - 3px */
+        transparent calc(40% + 3px),
+        transparent 50%,
+        white 50%,
+        white calc(50% + 2.5px),  /* 第6条线 - 2.5px */
+        transparent calc(50% + 2.5px),
+        transparent 60%,
+        white 60%,
+        white calc(60% + 2px),    /* 第7条线 - 2px */
+        transparent calc(60% + 2px),
+        transparent 70%,
+        white 70%,
+        white calc(70% + 1.5px),  /* 第8条线 - 1.5px */
+        transparent calc(70% + 1.5px),
+        transparent 80%,
+        white 80%,
+        white calc(80% + 1px),    /* 第9条线 - 1px */
+        transparent calc(80% + 1px),
+        transparent 85%,
+        white 85%,
+        white calc(85% + 1px),    /* 第10条线 - 1px */
+        transparent calc(85% + 1px),
+        transparent 90%,
+        white 90%,
+        white calc(90% + 1px),    /* 第11条线 - 1px */
+        transparent calc(90% + 1px),
+        transparent 95%,
+        white 95%,
+        white calc(95% + 1px),    /* 第12条线 - 1px */
+        transparent calc(95% + 1px),
+        transparent 100%
+    );
+    pointer-events: none;
+}
+
+.hero-content p {
+    font-family: 'Geist-Light', sans-serif;
+    font-size: 1.75rem;
+    font-weight: normal;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    color: #999999;
+    max-width: 800px;
+    line-height: 1.5;
+    margin-bottom: 3rem;
+    animation: fadeInUp 1s ease-out 0.3s backwards;
+}
+
+.hero-content p span {
+    font-family: 'Geist', sans-serif;
+    color: white;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1.5rem;
+    animation: fadeInUp 1s ease-out 0.6s backwards;
+}
+
+.nav-right {
+    display: flex;
+    gap: 1rem;
+    padding-top: 0.5rem;
+}
+
+.nav-right .button,
+.cta-buttons .button {
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    border-width: 1px;
+}
+
+.button {
+    padding: 1rem 2.5rem;
+    font-family: 'Geist', sans-serif;
+    font-weight: normal;
+    border-radius: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button-secondary {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+}
+
+.nav-right .button:nth-child(1),
+.nav-right .button:nth-child(2),
+.cta-buttons .button:nth-child(2) {
+    background-color: rgba(10, 10, 10, 0.5);
+    border: 1px solid #556bf8;
+    color: #556bf8;
+}
+
+.nav-right .button:nth-child(3) {
+    background-color: #556bf8;
+    border: 1px solid #556bf8;
+    color: #0a0a0a;
+}
+
+.cta-buttons .button:nth-child(1) {
+    background-color: #556bf8;
+    border: 1px solid #556bf8;
+    color: #0a0a0a;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+/* 添加浮动方块相关样式 */
+.backwrap {
+    background: transparent;
+    width: 100%;
+    height: 75vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+}
+
+.back-shapes {
+    width: 100%;
+    height: 75vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.floating {
+    position: absolute;
+    animation-name: floating;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.floating.square {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background-image: url(assets/images/square.png);
+    background-size: cover;
+}
+
+.floating.triangle {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-image: url(assets/images/square.png);
+    background-size: cover;
+}
+
+.floating.cross {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url(assets/images/square.png);
+    background-size: cover;
+}
+
+.floating.circle {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background-image: url(assets/images/square.png);
+    background-size: cover;
+}
+
+@keyframes floating {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+/* Features Section Styles */
+.features {
+    background-color: #0d0d0d;
+    background-image: url('assets/images/bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 8rem 0;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 调整黑色遮罩层透明度 */
+.features::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);  /* 增加黑色遮罩透明度到0.5 */
+    z-index: 1;
+}
+
+/* 大幅增强光晕效果 */
+.features .glow-effect {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -20%;
+    width: 140%;
+    height: 200%;
+    background: radial-gradient(
+        circle at center,
+        rgba(85, 107, 248, 0.45) 0%,     /* 调整中心透明度 */
+        rgba(85, 107, 248, 0.35) 20%,    /* 调整第二层透明度 */
+        rgba(85, 107, 248, 0.25) 40%,    /* 调整第三层透明度 */
+        rgba(85, 107, 248, 0.15) 60%,    /* 调整外层透明度 */
+        transparent 80%
+    );
+    z-index: 2;
+    transform: rotate(-10deg);
+    mix-blend-mode: screen;
+    pointer-events: none;
+    opacity: 0.5;                       /* 调整整体不透明度到0.75 */
+    filter: blur(70px);
+}
+
+/* 紫色光晕效果 */
+.features .glow-effect-purple {
+    content: '';
+    position: absolute;
+    top: 10%;                           /* 调整位置 */
+    left: -10%;                         /* 调整位置 */
+    width: 60%;                         /* 减小宽度 */
+    height: 80%;                        /* 减小高度 */
+    background: radial-gradient(
+        circle at center,
+        rgba(138, 43, 226, 0.15) 0%,    /* 降低透明度 */
+        rgba(138, 43, 226, 0.12) 20%,   /* 降低透明度 */
+        rgba(138, 43, 226, 0.08) 40%,   /* 降低透明度 */
+        rgba(138, 43, 226, 0.05) 60%,   /* 降低透明度 */
+        transparent 80%
+    );
+    z-index: 2;
+    transform: rotate(30deg);
+    mix-blend-mode: screen;
+    pointer-events: none;
+    opacity: 0.4;                       /* 降低整体不透明度 */
+    filter: blur(80px);                 /* 增加模糊效果 */
+}
+
+/* 颗粒效果放在最上层 */
+.features::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('data:image/svg+xml,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.15"/></svg>');
+    opacity: 0.15;
+    z-index: 3;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+}
+
+/* 内容放在最顶层 */
+.features .container {
+    position: relative;
+    z-index: 4;
+}
+
+.features-header {
+    text-align: center;
+    margin-bottom: 6rem;
+}
+
+.features-header .subtitle {
+    font-family: 'Geist-Light', sans-serif;
+    font-size: 1.5rem;
+    color: #556bf8;
+    margin-bottom: 1.5rem;
+}
+
+.features-header h2 {
+    font-family: 'Alliance No.2', sans-serif;
+    font-size: 4.5rem;
+    font-weight: 400;
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.2;
+}
+
+.cards {
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+}
+
+.card {
+    flex: 1;
+    background: transparent;
+    padding: 2.5rem 0;
+    border: none;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;  /* 垂直居中对齐 */
+    gap: 2rem;           /* 增加图标和标题之间的间距 */
+    margin-bottom: 2rem;
+}
+
+/* 调整标题样式 */
+.card-header h3, 
+.card-header h4 {
+    margin: 0;  /* 移除标题的默认margin */
+}
+
+/* 图标容器基础样式 */
+.icon-container, .image-container {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: transparent !important;
+    background-color: transparent !important;
+    flex-shrink: 0;  /* 防止图标被压缩 */
+}
+
+.card .icon-container {
+    background: transparent !important;
+}
+
+.icon-container img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Solana图标 - 3D立方体 */
+.icon-container.solana-icon::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='white' stroke-width='2'%3E%3Cpath d='M20 44l12-7 12 7v-24l-12-7-12 7z'/%3E%3Cpath d='M20 20l12-7 12 7'/%3E%3Cpath d='M20 20v24'/%3E%3Cpath d='M44 20v24'/%3E%3Cpath d='M32 13v24'/%3E%3Cpath d='M32 37l12-7'/%3E%3Cpath d='M32 37l-12-7'/%3E%3C/g%3E%3C/svg%3E");
+    animation: floating 3s infinite ease-in-out;
+}
+
+/* A1lab图标 - 点线网格 */
+.icon-container.a1lab-icon::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cg fill='white'%3E%3Ccircle cx='16' cy='16' r='3'/%3E%3Ccircle cx='32' cy='16' r='3'/%3E%3Ccircle cx='48' cy='16' r='3'/%3E%3Ccircle cx='16' cy='32' r='3'/%3E%3Ccircle cx='32' cy='32' r='3'/%3E%3Ccircle cx='48' cy='32' r='3'/%3E%3Ccircle cx='16' cy='48' r='3'/%3E%3Ccircle cx='32' cy='48' r='3'/%3E%3Ccircle cx='48' cy='48' r='3'/%3E%3C/g%3E%3Cpath stroke='white' stroke-width='1.5' fill='none' d='M16 16h32v32H16zM32 16v32M16 32h32'/%3E%3C/svg%3E");
+    animation: floating 3s infinite ease-in-out;
+    animation-delay: -1.5s;
+}
+
+/* Computing图标 - 抽象的计算节点 */
+.computing-icon::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='white' stroke-width='2'%3E%3Crect x='16' y='16' width='32' height='32' rx='2'/%3E%3Cpath d='M16 28h32M28 16v32'/%3E%3Ccircle cx='22' cy='22' r='2' fill='white'/%3E%3Ccircle cx='42' cy='42' r='2' fill='white'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Feature Store图标 - 数据存储 */
+.feature-store-icon::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='white' stroke-width='2'%3E%3Cpath d='M16 20h32M16 32h32M16 44h32'/%3E%3Ccircle cx='24' cy='20' r='3' fill='white'/%3E%3Ccircle cx='40' cy='32' r='3' fill='white'/%3E%3Ccircle cx='32' cy='44' r='3' fill='white'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Build图标 - 构建积木 */
+.build-icon::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='white' stroke-width='2'%3E%3Crect x='20' y='20' width='12' height='12'/%3E%3Crect x='32' y='32' width='12' height='12'/%3E%3Cpath d='M32 26h12M38 20v12'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* AI Power图标 - 大脑网络 */
+.ai-power-icon::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='white' stroke-width='2'%3E%3Ccircle cx='32' cy='32' r='16'/%3E%3Cpath d='M32 16v32M16 32h32M26 20l12 24M38 20L26 44'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Fueling图标 - 能量循环 */
+.fueling-icon::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='white' stroke-width='2'%3E%3Cpath d='M32 16v8M16 32h8M40 32h8M32 40v8M24 24l-4-4M40 24l4-4M40 40l4 4M24 40l-4 4'/%3E%3Ccircle cx='32' cy='32' r='8' fill='white'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.card h3 {
+    font-family: 'Alliance No.2', sans-serif;
+    font-size: 2rem;
+    font-weight: 400;
+    color: white;
+}
+
+.card p {
+    font-family: 'Geist-Light', sans-serif;
+    font-size: 1.25rem;
+    line-height: 1.7;
+    color: #999999;
+    opacity: 0.8;
+}
+
+/* Solutions Section */
+.solutions {
+    background-color: #0d0d0d;
+    padding: 8rem 0;
+    color: white;
+}
+
+.solution-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    max-width: 100%;
+}
+
+/* 大卡片样式 */
+.solutions .card-large {
+    padding: 4rem 0;
+    background-color: #0d0d0d;
+    border: none;  /* 确保没有边框 */
+    animation: fadeInUp 1s ease-out;
+}
+
+.card-large .image-placeholder {
+    display: none;  /* 或直接删除这个样式块 */
+}
+
+.card-large h3 {
+    font-family: 'Alliance No.2', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+}
+
+.card-large p {
+    font-family: 'Geist-Light', sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.7;
+    color: #999999;
+    max-width: 900px;
+}
+
+/* 小卡片网格 */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 0 -4rem;
+}
+
+.card-small {
+    background-color: #0d0d0d;
+    padding: 3rem 4rem;
+    animation: fadeInUp 1s ease-out;
+}
+
+.card-small .card-header {
+    display: flex;
+    align-items: center;  /* 垂直居中对齐 */
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.card-small .card-header h4 {
+    margin: 0;  /* 移除标题的默认margin */
+}
+
+.card-small .icon-container {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #556bf8;
+    flex-shrink: 0;
+}
+
+.card-small h4 {
+    font-family: 'Alliance No.2', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.card-small p {
+    font-family: 'Geist-Light', sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: #999999;
+}
+
+/* Scale Section */
+.scale {
+    background-color: #0d0d0d;
+    padding: 8rem 0 3rem;  /* 减少底部padding */
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 视频背景 */
+.scale video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+/* 遮罩层放在视频上方 */
+.scale::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 10, 10, 0.8); /* 增加遮罩透明度到0.6 */
+    z-index: 1;
+}
+
+/* 确保容器有足够高度容纳重叠卡片 */
+.scale .container {
+    width: 90%;
+    max-width: 1350px;
+    margin: 0 auto;
+    min-height: 800px;
+    position: relative;
+    z-index: 2;
+}
+
+.scale-header {
+    text-align: center;
+    margin-bottom: 6rem;
+}
+
+.scale-header h2 {
+    font-family: 'Alliance No.2', sans-serif;
+    font-size: 4.5rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 1s ease-out;
+}
+
+.scale-header .subtitle {
+    font-family: 'Geist-Light', sans-serif;
+    font-size: 1.25rem;
+    color: #999999;
+}
+
+.scale-cards {
+    position: relative;
+    padding-top: 4rem;
+    display: flex;
+    gap: 5rem;
+    justify-content: space-between;
+}
+
+/* 短窄卡片基础样式 */
+.card-short {
+    width: calc(50% - 32px);
+    margin-left: 16px;
+    position: relative;
+}
+
+/* 第一层伪元素 - 所有卡片 */
+.card-short::before {
+    content: "";
+    position: absolute;
+    left: 8px;
+    right: 8px;
+    bottom: calc(100% + 1px);
+    height: 8px;
+    background-color: #111;
+    border: 1px solid #2c2c2c;
+    border-bottom: 0;
+    z-index: -1;
+}
+
+/* 第二层伪元素 - 所有卡片 */
+.card-short::after {
+    content: "";
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    bottom: calc(100% + 9px);
+    height: 8px;
+    background-color: #111;
+    border: 1px solid #2c2c2c;
+    border-bottom: 0;
+    z-index: -2;
+}
+
+/* 右侧卡片特殊样式 */
+.card-short:last-child {
+    margin-left: 0;
+    margin-right: 16px;
+}
+
+/* 修改卡片基础样式 */
+.scale-card {
+    background-color: #111;
+    border: 1px solid #2c2c2c;
+    padding: 3rem;
+    position: relative;
+    animation: fadeInUp 1s ease-out;
+    transition: transform 0.3s ease;
+}
+
+.scale-card:hover {
+    transform: translateY(-10px);
+}
+
+.scale-card .image-container {
+    width: 80px;  /* 增大尺寸 */
+    height: 80px; /* 增大尺寸 */
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+.scale-card h3 {
+    font-family: 'Alliance No.2', sans-serif;
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+}
+
+.scale-card p {
+    font-family: 'Geist-Light', sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: #999999;
+}
+
+/* CTA Section */
+.cta {
+    background-color: #0d0d0d;
+    padding: 8rem 0;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-content {
+    text-align: center;
+}
+
+.cta h2 {
+    font-family: 'Alliance No.2', sans-serif;
+    font-size: 4.5rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+    animation: fadeInUp 1s ease-out;
+}
+
+.cta p {
+    font-family: 'Geist-Light', sans-serif;
+    font-size: 1.5rem;
+    color: #999999;
+    margin-bottom: 3rem;
+    animation: fadeInUp 1s ease-out 0.3s backwards;
+}
+
+.cta .cta-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    animation: fadeInUp 1s ease-out 0.6s backwards;
+}
+
+.cta .button {
+    padding: 1rem 2.5rem;
+    font-size: 1.125rem;
+}
+
+.cta .button:first-child {
+    background-color: #556bf8;
+    border: 1px solid #556bf8;
+    color: #0a0a0a;
+}
+
+/* Footer Section */
+.footer {
+    background-color: #0a0a0a;
+    padding: 6rem 0;
+    color: white;
+    border-top: 1px solid #2c2c2c;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.footer-logo {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.logo-placeholder {
+    width: 120px;
+    height: 32px;
+    background-color: #556bf8;
+    opacity: 0.8;
+}
+
+.footer-logo span {
+    font-family: 'Geist-Light', sans-serif;
+    font-size: 0.875rem;
+    color: #999999;
+}
+
+.footer-social {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-button {
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: 1px solid #2c2c2c;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.social-button:hover {
+    border-color: #556bf8;
+    background-color: rgba(85, 107, 248, 0.1);
+}
+
+.icon-placeholder {
+    width: 20px;
+    height: 20px;
+    background-color: #556bf8;
+    opacity: 0.8;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.footer-links h4 {
+    font-family: 'Alliance No.2', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.link-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.link-group a {
+    font-family: 'Geist', sans-serif;
+    font-size: 1rem;
+    color: #999999;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.link-group a:hover {
+    color: white;
+}
+
+/* 添加平滑滚动效果 */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Footer Logo样式 */
+.logo-box-footer {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;  /* 增加间距 */
+}
+
+.logo-box-footer img {
+    height: 40px;  /* 增大logo尺寸 */
+    width: auto;
+}
+
+.logo-box-footer .brand-name {
+    font-family: 'Alliance No.2', sans-serif;
+    font-size: 1.5rem;  /* 增大字体尺寸 */
+    color: white;
+}
+
+/* Social Icons & Buttons Styles */
+.social-button {
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: 1px solid #2c2c2c;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.social-icon {
+    width: 20px;
+    height: 20px;
+    transition: all 0.3s ease;
+}
+
+/* 内联SVG和外部SVG图标的颜色 */
+.social-button svg.social-icon,
+.social-button img.social-icon {
+    fill: #556bf8;
+}
+
+.social-button:hover {
+    border-color: #556bf8;
+    background-color: rgba(85, 107, 248, 0.1);
+}
+
+/* Hover时所有图标变白 */
+.social-button:hover svg.social-icon,
+.social-button:hover img.social-icon {
+    fill: white;
+}
+
+/* 修改按钮样式为链接 */
+.nav-right .button {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 定义动画 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 修改线条装饰的媒体查询 */
+@media screen and (max-width: 1024px) {
+    .hero-content h1::after {
+        display: none;  /* 在平板及以下尺寸隐藏线条 */
+    }
+    
+    .hero-content h1 {
+        font-size: 5rem;  /* 同时调整移动端标题大小 */
+    }
+
+    .hero-content p {
+        font-size: 1.5rem;
+    }
+
+    /* Logo调整 - 减小宽度 */
+    .logo-box {
+        width: 300px;  /* 从400px减小到300px */
+        height: 80px;
+        padding-left: 2rem;
+    }
+
+    .logo-box img {
+        height: 50px;
+    }
+
+    /* 卡片布局调整 */
+    .cards {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        border: none;
+    }
+
+    .card-small {
+        border: none;
+        background-color: #0a0a0a !important;  /* 修改为深黑色 */
+    }
+
+    .card-small:not(:last-child) {
+        border-bottom: none;
+    }
+
+    /* Scale部分调整 */
+    .scale-cards {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;  /* 水平居中 */
+    }
+
+    .scale-card {
+        width: 100%;
+        max-width: 600px;  /* 限制最大宽度 */
+        margin: 0 auto;    /* 水平居中 */
+    }
+
+    .scale-header {
+        text-align: center;  /* 标题居中 */
+    }
+
+    /* CTA部分调整 */
+    .cta h2 {
+        font-size: 3.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 3.5rem;  /* 手机端进一步调整标题大小 */
+    }
+
+    /* 导航栏调整 */
+    nav {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    .nav-right {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Logo调整 */
+    .logo-box {
+        width: 300px;
+        height: 70px;
+        padding-left: 1.5rem;
+    }
+
+    .logo-box img {
+        height: 40px;
+    }
+
+    /* Hero内容调整 */
+    .hero-content {
+        padding-top: 5vh;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 3.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.25rem;
+    }
+
+    .cta-buttons {
+        justify-content: center;
+    }
+
+    /* 卡片布局调整 */
+    .card-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .card-small {
+        padding: 2rem;
+        border: none;
+        background-color: #0a0a0a !important;  /* 修改为深黑色 */
+    }
+
+    .card-small:not(:last-child) {
+        border-bottom: none;
+    }
+
+    /* Scale部分调整 */
+    .scale-card {
+        max-width: 100%;  /* 在手机端占满宽度 */
+        padding: 2rem;
+    }
+
+    .scale-header h2 {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    /* CTA部分调整 */
+    .cta {
+        padding: 4rem 0;
+    }
+
+    .cta h2 {
+        font-size: 2.5rem;
+    }
+
+    .cta p {
+        font-size: 1.25rem;
+    }
+
+    /* Footer调整 */
+    .footer {
+        padding: 4rem 0;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+
+    .footer-links {
+        text-align: center;
+    }
+
+    .link-group {
+        align-items: center;
+    }
+}
+
+/* 超小屏幕调整 (< 480px) */
+@media screen and (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .nav-right {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .nav-right .button {
+        width: 100%;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+    }
+
+    .cta-buttons .button {
+        width: 100%;
+    }
+} 
